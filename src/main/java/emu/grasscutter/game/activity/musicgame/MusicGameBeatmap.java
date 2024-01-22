@@ -3,6 +3,7 @@ package emu.grasscutter.game.activity.musicgame;
 import dev.morphia.annotations.*;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.net.proto.*;
+import java.security.SecureRandom;
 import java.util.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -36,7 +37,7 @@ public class MusicGameBeatmap {
 
     public void save() {
         if (musicShareId == 0) {
-            musicShareId = new Random().nextLong(100000000000000L, 999999999999999L);
+            musicShareId = new SecureRandom().nextLong(100000000000000L, 999999999999999L);
         }
         DatabaseHelper.saveMusicGameBeatmap(this);
     }

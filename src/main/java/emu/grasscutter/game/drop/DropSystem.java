@@ -12,6 +12,7 @@ import emu.grasscutter.scripts.data.SceneMonster;
 import emu.grasscutter.server.game.*;
 import emu.grasscutter.server.packet.send.*;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
+import java.security.SecureRandom;
 import java.util.*;
 
 public final class DropSystem extends BaseGameSystem {
@@ -26,7 +27,7 @@ public final class DropSystem extends BaseGameSystem {
     public DropSystem(GameServer server) {
         super(server);
 
-        this.rand = new Random();
+        this.rand = new SecureRandom();
         this.dropTable = GameData.getDropTableDataMap();
         this.chestReward = new HashMap<>();
         this.monsterDrop = new HashMap<>();

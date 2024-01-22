@@ -6,6 +6,7 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.*;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.server.packet.send.PacketServerAnnounceNotify;
+import java.security.SecureRandom;
 import java.util.*;
 
 @Command(
@@ -63,7 +64,7 @@ public final class AnnounceCommand implements CommandHandler {
                 break;
 
             default:
-                var id = new Random().nextInt(10000, 99999);
+                var id = new SecureRandom().nextInt(10000, 99999);
                 var text = String.join(" ", args);
                 manager
                         .getOnlinePlayers()
