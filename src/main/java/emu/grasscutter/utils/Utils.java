@@ -15,6 +15,7 @@ import java.io.*;
 import java.lang.reflect.Field;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.*;
+import java.security.SecureRandom;
 import java.time.*;
 import java.time.temporal.TemporalAdjusters;
 import java.util.*;
@@ -24,7 +25,7 @@ import org.slf4j.Logger;
 
 @SuppressWarnings({"UnusedReturnValue", "BooleanMethodIsAlwaysInverted"})
 public final class Utils {
-    public static final Random random = new Random();
+    public static final Random random = new SecureRandom();
     private static final char[] HEX_ARRAY = "0123456789abcdef".toCharArray();
 
     public static int randomRange(int min, int max) {

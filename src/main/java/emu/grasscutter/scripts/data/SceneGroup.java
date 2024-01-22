@@ -3,6 +3,7 @@ package emu.grasscutter.scripts.data;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.world.Position;
 import emu.grasscutter.scripts.ScriptLoader;
+import java.security.SecureRandom;
 import java.util.*;
 import java.util.stream.Collectors;
 import javax.script.*;
@@ -188,7 +189,7 @@ public final class SceneGroup {
                     for (int j = 0; j < suite.rand_weight; j++) randSuiteList.add(i);
                 }
 
-                return randSuiteList.get(new Random().nextInt(randSuiteList.size()));
+                return randSuiteList.get(new SecureRandom().nextInt(randSuiteList.size()));
             }
         }
         return init_config.suite;
